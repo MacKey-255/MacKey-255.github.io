@@ -1,17 +1,80 @@
 <template>
-  <!-- particles.client.js container -->
-  <div id="particles-js"></div>
+  <div ref="particlesDiv" class="particles" :style="'background: ' + backgroundColor"></div>
 </template>
 
 <script>
 export default {
-  name: "particles"
+  name: "particles",
+  props: {
+    isDarkMode: Boolean,
+  },
+  data() {
+    return {
+      particles: null,
+    }
+  },
+  computed: {
+    backgroundColor() {
+      return this.isDarkMode ? '#222' : '#f2f2f2';
+    },
+    particlesOptions() {
+      const color = this.isDarkMode ? '#fff' : '#000';
+      return {color: {value: color}, line_linked: {color: color}};
+    }
+  },
+  methods: {
+    async createParticles() {
+      if (!process.client) {
+        return;
+      }
+
+      /* pJS elements */
+      const particlesDiv = this.$refs.particlesDiv,
+        pJS_canvas_class = 'particles-js-canvas-el';
+      if (particlesDiv === null) {
+        return;
+      }
+
+      /* remove canvas if exists into the pJS target tag */
+      const exist_canvas = particlesDiv.getElementsByClassName(pJS_canvas_class);
+      if (exist_canvas.length) {
+        while (exist_canvas.length > 0) {
+          particlesDiv.removeChild(exist_canvas[0]);
+        }
+      }
+
+      /* create canvas element */
+      const canvas_el = document.createElement('canvas');
+      canvas_el.className = pJS_canvas_class;
+
+      /* set size canvas */
+      canvas_el.style.width = "100%";
+      canvas_el.style.height = "calc(100% - 6px)";
+
+      /* append canvas */
+      const canvas = particlesDiv.appendChild(canvas_el);
+
+      /* launch particle.js */
+      if (canvas != null) {
+        const particlesJS = await import('@/plugins/particles.client');
+        if (this.particles != null) {  /* destroy last particles */
+          this.particles.fn.vendors.destroyJS();
+        }
+        this.particles = particlesJS.default(particlesDiv, {particles: this.particlesOptions});
+      }
+    }
+  },
+  async mounted() {
+    await this.createParticles();
+  },
+  async updated() {
+    await this.createParticles();
+  }
 }
 </script>
 
 <style scoped>
-/* ---- particles.client.js container ---- */
-#particles-js {
+.particles {
   position: absolute;
   left: 0;
   top: 0;
@@ -21,7 +84,6 @@ export default {
   background-color: #f2f2f2;
 }
 
-/* ---- stats.js ---- */
 .count-particles {
   background: #000022;
   position: absolute;
@@ -42,8 +104,7 @@ export default {
   font-size: 1.1em;
 }
 
-#stats,
-.count-particles {
+#stats, .count-particles {
   -webkit-user-select: none;
 }
 
