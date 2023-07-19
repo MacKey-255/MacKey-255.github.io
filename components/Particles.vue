@@ -31,7 +31,7 @@ export default {
       /* pJS elements */
       const particlesDiv = this.$refs.particlesDiv,
         pJS_canvas_class = 'particles-js-canvas-el';
-      if (particlesDiv === null) {
+      if (particlesDiv === null || particlesDiv === undefined) {
         return;
       }
 
@@ -60,15 +60,18 @@ export default {
         if (this.particles != null) {  /* destroy last particles */
           this.particles.fn.vendors.destroyJS();
         }
-        this.particles = particlesJS.default(particlesDiv, {particles: this.particlesOptions});
+        this.particles = particlesJS.default(particlesDiv, {particles: this.particlesOptions}, true);
       }
     }
   },
   async mounted() {
+    /* Create particles by first time */
     await this.createParticles();
   },
-  async updated() {
-    await this.createParticles();
+  async beforeUpdate() {
+    if (this.particles !== null){ /* Only create particles if it exist before */
+      await this.createParticles();
+    }
   }
 }
 </script>

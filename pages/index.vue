@@ -1,23 +1,42 @@
 <template>
-  <div :class="isDarkMode ? 'dark' : 'light'">
-    <particles :is-dark-mode="isDarkMode" />
-
-    <h1 class="m-4 text-center dark:text-white md:text-3xl lg:text-3xl">
-      <font-awesome-icon icon="fa-solid fa-house" />
-      {{ $t('home') }}
-      <lang-switcher />
-      <dark-mode-switcher />
-    </h1>
-  </div>
+  <main class="tab-content">
+    <Home v-if="isActive(1)" />
+    <About v-else-if="isActive(2)" />
+    <Portfolio v-else-if="isActive(3)" />
+    <Contact v-else-if="isActive(4)" />
+    <div v-else>Nothing</div>
+  </main>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import Home from "@/components/tabs/Home";
+import About from "@/components/tabs/About";
+import Portfolio from "@/components/tabs/Portfolio";
+import Contact from "@/components/tabs/Contact";
 
 export default {
   name: 'IndexPage',
-  computed: {
-    ...mapGetters(['isDarkMode'])
+  props: {
+    activePage: Number,
+  },
+  components: { Home, About, Portfolio, Contact },
+  methods: {
+    isActive(pageNumber) {
+      return this.activePage === pageNumber;
+    },
   },
 }
 </script>
+
+<style scoped>
+main {
+  display: flex;
+  overflow: hidden;
+  min-height: calc(100vh - 24px);
+}
+@media only screen and (max-device-width: 640px) {
+  main { /* Assign space for navbar */
+    min-height: calc(100vh - 84px);
+  }
+}
+</style>

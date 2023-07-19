@@ -1,5 +1,8 @@
 export default {
-  home: 'Homepage',
+  home: 'Home',
   projects: 'Projects',
   about: 'About us',
+  contact: 'Contact',
+  language: 'Language',
+  dark_mode: 'Dark mode',
 };

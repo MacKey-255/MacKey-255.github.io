@@ -8,6 +8,9 @@ export const getters = {
 
 export const mutations = {
   SET_DARK: (state, bool) => {
-    state.isDarkMode = bool;
+    if(process.client) {
+      localStorage.setItem('dark-theme', bool);
+      state.isDarkMode = bool;
+    }
   }
 };
