@@ -1,5 +1,8 @@
 export default {
-  home: 'Página principal',
+  home: 'Principal',
   projects: 'Proyectos',
-  about: 'Sobre nosotros',
+  about: 'Sobre mi',
+  contact: 'Contacto',
+  language: 'Lenguaje',
+  dark_mode: 'Temas',
 };
