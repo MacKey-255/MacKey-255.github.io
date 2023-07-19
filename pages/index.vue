@@ -27,16 +27,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-main {
-  display: flex;
-  overflow: hidden;
-  min-height: calc(100vh - 24px);
-}
-@media only screen and (max-device-width: 640px) {
-  main { /* Assign space for navbar */
-    min-height: calc(100vh - 84px);
-  }
-}
-</style>

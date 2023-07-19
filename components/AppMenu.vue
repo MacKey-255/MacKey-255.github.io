@@ -172,7 +172,7 @@ export default {
   }
   .menu {
     display: flex;
-    margin: 8px;
+    padding: 8px;
   }
   .menu_contain {
     flex-grow: 1;

@@ -6,16 +6,9 @@
 
 <style scoped>
 footer {
-  width: 100%;
-  height: 24px;
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 132px);
   z-index: 5;
-}
-footer p {
-  width: 320px;
-  margin: 0 auto;
-  text-align: center;
-  /*border-radius: 15px 15px 0 0;*/
-  /*background: linear-gradient(135deg, #9a0dfe, #637dfb);*/
-  /*box-shadow: 0 2px 12px 0 rgba(91, 41, 191, 0.5);*/
 }
 </style>
