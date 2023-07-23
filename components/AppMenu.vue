@@ -2,7 +2,7 @@
   <nav class="navbar dark:text-white">
     <div class="menu md:rounded-lg bg-slate-300/[0.8] dark:bg-slate-600/[0.8]">
       <input class="menu_input" id="btn1" name="menu" type="radio" value="1" :checked="activePage === 1"
-             @input="updateActivePage" />
+             @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn1">
           <font-awesome-icon icon="house-chimney" class="fa-icon"></font-awesome-icon>
@@ -13,7 +13,7 @@
       </div>
 
       <input class="menu_input" id="btn2" name="menu" type="radio" value="2" :checked="activePage === 2"
-             @input="updateActivePage" />
+             @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn2">
           <font-awesome-icon icon="address-card" class="fa-icon"></font-awesome-icon>
@@ -24,7 +24,7 @@
       </div>
 
       <input class="menu_input" id="btn3" name="menu" type="radio" value="3" :checked="activePage === 3"
-             @input="updateActivePage" />
+             @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn3">
           <font-awesome-icon icon="briefcase" class="fa-icon fag-align"></font-awesome-icon>
@@ -35,7 +35,7 @@
       </div>
 
       <input class="menu_input" id="btn4" name="menu" type="radio" value="4" :checked="activePage === 4"
-             @input="updateActivePage" />
+             @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn4">
           <font-awesome-icon icon="envelope-open" class="fa-icon fag-align"></font-awesome-icon>
@@ -47,7 +47,7 @@
 
       <div class="menu_contain">
         <label class="menu_label">
-          <lang-switcher />
+          <lang-switcher/>
           <span class="menu_text">
             {{ $t('language') }}
           </span>
@@ -56,7 +56,7 @@
 
       <div class="menu_contain">
         <label class="menu_label">
-          <dark-mode-switcher />
+          <dark-mode-switcher/>
           <span class="menu_text">
             {{ $t('dark_mode') }}
           </span>
@@ -68,15 +68,18 @@
 
 <script>
 /* Ref: https://codepen.io/Anna_Batura/pen/qBbaXBd */
+import {mapGetters, mapMutations} from "vuex";
+
 export default {
   name: "AppMenu",
-  props: {
-    activePage: Number,
+  computed: {
+    ...mapGetters(["activePage"])
   },
   methods: {
     updateActivePage(event) {
-      this.$emit('update:activePage', parseInt(event.target.value));
-    }
+      this.SET_PAGE(parseInt(event.target.value));
+    },
+    ...mapMutations(["SET_PAGE"]),
   },
 }
 </script>
@@ -91,10 +94,12 @@ export default {
   transform: translateY(-50%);
   z-index: 5;
 }
+
 .menu {
   position: relative;
   padding: 8px;
 }
+
 .menu:hover .menu_text {
   display: block;
   -moz-transition: all 0.3s;
@@ -109,6 +114,7 @@ export default {
   top: 3px;
   opacity: 0.7;
 }
+
 .fag-align {
   margin-left: 2px;
 }
@@ -136,6 +142,7 @@ export default {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .menu_label:hover .fa-icon {
   opacity: 1;
 }
@@ -150,13 +157,16 @@ export default {
 .menu_input[type=radio] {
   display: none;
 }
+
 .menu_input[type=radio]:checked + .menu_contain .menu_label {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
 .menu_input[type=radio]:checked + .menu_contain .menu_label .fa-icon,
 .menu_input[type=radio]:checked + .menu_contain .menu_label .menu_text {
   opacity: 1;
 }
+
 .menu_input[type=radio]:checked + .menu_contain .menu_label {
   opacity: 1;
   -moz-transform: translateY(0) translateX(0) scale(1);
@@ -171,15 +181,19 @@ export default {
     position: relative;
     transform: none;
   }
+
   .menu {
     display: flex;
   }
+
   .menu_contain {
     flex-grow: 1;
   }
+
   .menu_label {
     width: 36px;
   }
+
   .menu:hover .menu_text {
     opacity: 0;
     -moz-transition: all 0.5s;
@@ -187,9 +201,11 @@ export default {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
+
   .menu .menu_label:hover {
     width: auto;
   }
+
   .menu .menu_label:hover .menu_text {
     opacity: 1;
     -moz-transition: all 0.5s;

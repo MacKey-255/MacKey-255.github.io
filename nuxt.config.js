@@ -7,12 +7,21 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Michel Suárez - Portfolio',
+    title: 'Michel Suárez - Software Engineer',
     htmlAttrs: { lang: 'en' },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+      { name: 'format-detection', content: 'telephone=no' },
+      /* Author metadata */
+      { name: 'author', content: 'Michel Suárez' },
+      { name: 'description', content: 'Software Engineer | Full Stack web developer | Python | Vue.js | Docker.' },
+      { name: 'keywords', content: 'Web developer, Backend developer, Full stack developer, Full stack web developer, Python, Django, JavaScript, Vue.js, FastAPI' },
+      /* Share metadata */
+      { name: 'og:title', content: 'Michel Suárez' },
+      { name: 'og:description', content: 'Full Stack Web Developer (Python & Vue.js) and C#/Java Desktop Developer.' },
+      { name: 'og:image', content: '/profile.jpg' },
+      { name: 'og:url', content: 'https://mackey-255.github.io/' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

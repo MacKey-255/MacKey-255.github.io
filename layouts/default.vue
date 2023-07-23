@@ -1,12 +1,12 @@
 <template>
   <div :class="darkClass">
-    <particles :is-dark-mode="isDarkMode" />
-    <AppMenu :activePage.sync="activePage" />
+    <particles :is-dark-mode="isDarkMode"/>
+    <AppMenu/>
 
     <div class="container px-4 md:mx-auto">
-      <NuxtChild :activePage.sync="activePage" />
+      <NuxtChild/>
     </div>
-    <AppFooter />
+    <AppFooter/>
   </div>
 </template>
 
@@ -15,14 +15,6 @@ import {mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: "default",
-  data() {
-    return {
-      activePage: 1,
-      showModal: false,
-      openPortfolio: false,
-      details: {},
-    };
-  },
   methods: {
     ...mapMutations(['SET_DARK']),
   },
@@ -33,7 +25,7 @@ export default {
     ...mapGetters(['isDarkMode'])
   },
   mounted() {
-    if(process.client) {
+    if (process.client) {
       // Load dark mode from browser local storage
       this.SET_DARK(localStorage.getItem('dark-theme') === 'true');
     }

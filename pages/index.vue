@@ -1,10 +1,10 @@
 <template>
   <main class="tab-content flex items-center md:h-screen">
     <div class="mx-auto">
-      <Home :activePage.sync="actualActivePage" v-if="isActive(1)" />
-      <Skills v-else-if="isActive(2)" />
-      <Portfolio v-else-if="isActive(3)" />
-      <Contact v-else-if="isActive(4)" />
+      <Home v-if="isActive(1)"/>
+      <Skills v-else-if="isActive(2)"/>
+      <Portfolio v-else-if="isActive(3)"/>
+      <Contact v-else-if="isActive(4)"/>
       <div v-else>Nothing</div>
     </div>
   </main>
@@ -15,35 +15,18 @@ import Home from "@/components/tabs/Home";
 import Skills from "@/components/tabs/Skills";
 import Portfolio from "@/components/tabs/Portfolio";
 import Contact from "@/components/tabs/Contact";
+import {mapGetters} from "vuex";
 
 export default {
   name: 'IndexPage',
-  props: {
-    activePage: Number,
+  components: {Home, Skills, Portfolio, Contact},
+  computed: {
+    ...mapGetters(["activePage"])
   },
-  data() {
-    return {
-      actualActivePage: this.activePage,
-    }
-  },
-  watch: {
-    actualActivePage: function (newVal) {
-      this.updateActivePage(newVal);
-      return newVal;
-    },
-    activePage: function (newVal) {
-      this.actualActivePage = newVal;
-      return newVal;
-    },
-  },
-  components: { Home, Skills, Portfolio, Contact },
   methods: {
     isActive(pageNumber) {
-      return this.actualActivePage === pageNumber;
+      return this.activePage === pageNumber;
     },
-    updateActivePage(value) {
-      this.$emit('update:activePage', value);
-    }
   },
 }
 </script>

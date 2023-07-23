@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import {mapGetters, mapMutations} from 'vuex';
 
 export default {
   name: "DarkModeSwitcher",

@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto">
-    <page-header icon="envelope-open" title="contact" />
+    <page-header icon="envelope-open" title="contact"/>
   </div>
 </template>
 

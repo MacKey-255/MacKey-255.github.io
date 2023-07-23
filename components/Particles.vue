@@ -69,7 +69,7 @@ export default {
     await this.createParticles();
   },
   async beforeUpdate() {
-    if (this.particles !== null){ /* Only create particles if it exist before */
+    if (this.particles !== null) { /* Only create particles if it exist before */
       await this.createParticles();
     }
   }

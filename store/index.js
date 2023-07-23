@@ -1,9 +1,11 @@
 export const state = () => ({
-  isDarkMode: false
+  isDarkMode: false,
+  activePage: 1,
 });
 
 export const getters = {
   isDarkMode: (state) => state.isDarkMode,
+  activePage: (state) => state.activePage,
   GITHUB_PROFILE_URL: () => 'https://github.com/MacKey-255',
   LINKEDIN_PROFILE_URL: () => 'https://www.linkedin.com/in/mackey255/',
   EMAIL: () => 'mackeyfuturo@gmail.com'
@@ -11,9 +13,12 @@ export const getters = {
 
 export const mutations = {
   SET_DARK: (state, bool) => {
-    if(process.client) {
+    if (process.client) {
       localStorage.setItem('dark-theme', bool);
       state.isDarkMode = bool;
     }
+  },
+  SET_PAGE: (state, value) => {
+    state.activePage = value;
   }
 };

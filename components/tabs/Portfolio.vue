@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto">
-    <page-header icon="briefcase" title="projects" />
+    <page-header icon="briefcase" title="projects"/>
   </div>
 </template>
 

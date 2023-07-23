@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto">
-    <page-header icon="address-card" title="skills" />
+    <page-header icon="address-card" title="skills"/>
   </div>
 </template>
 
