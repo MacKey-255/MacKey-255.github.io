@@ -3,7 +3,10 @@ export const state = () => ({
 });
 
 export const getters = {
-  isDarkMode: (state) => state.isDarkMode
+  isDarkMode: (state) => state.isDarkMode,
+  GITHUB_PROFILE_URL: () => 'https://github.com/MacKey-255',
+  LINKEDIN_PROFILE_URL: () => 'https://www.linkedin.com/in/mackey255/',
+  EMAIL: () => 'mackeyfuturo@gmail.com'
 };
 
 export const mutations = {

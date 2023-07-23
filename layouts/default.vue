@@ -1,10 +1,10 @@
 <template>
-  <div class="container mx-auto" :class="darkClass">
+  <div :class="darkClass">
     <particles :is-dark-mode="isDarkMode" />
     <AppMenu :activePage.sync="activePage" />
 
-    <div class="content">
-      <NuxtChild :activePage="activePage" />
+    <div class="container px-4 md:mx-auto">
+      <NuxtChild :activePage.sync="activePage" />
     </div>
     <AppFooter />
   </div>
@@ -40,7 +40,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar dark:text-white">
-    <div class="menu">
+    <div class="menu md:rounded-lg bg-slate-300/[0.8] dark:bg-slate-600/[0.8]">
       <input class="menu_input" id="btn1" name="menu" type="radio" value="1" :checked="activePage === 1"
              @input="updateActivePage" />
       <div class="menu_contain">
@@ -18,7 +18,7 @@
         <label class="menu_label" for="btn2">
           <font-awesome-icon icon="address-card" class="fa-icon"></font-awesome-icon>
           <span class="menu_text">
-            {{ $t('about') }}
+            {{ $t('skills') }}
           </span>
         </label>
       </div>
@@ -93,6 +93,7 @@ export default {
 }
 .menu {
   position: relative;
+  padding: 8px;
 }
 .menu:hover .menu_text {
   display: block;
@@ -172,7 +173,6 @@ export default {
   }
   .menu {
     display: flex;
-    margin: 8px;
   }
   .menu_contain {
     flex-grow: 1;
