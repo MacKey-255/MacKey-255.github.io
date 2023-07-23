@@ -49,7 +49,7 @@ export default {
 
       /* set size canvas */
       canvas_el.style.width = "100%";
-      canvas_el.style.height = "calc(100% - 6px)";
+      canvas_el.style.height = "100%";
 
       /* append canvas */
       const canvas = particlesDiv.appendChild(canvas_el);
@@ -77,8 +77,9 @@ export default {
 </script>
 
 <style scoped>
+
 .particles {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: -1;

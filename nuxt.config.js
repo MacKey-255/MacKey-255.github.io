@@ -27,6 +27,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vue-typer.client.js',
+    '~/plugins/route-lang.js',
     '~/plugins/fontawesome.js'
   ],
 

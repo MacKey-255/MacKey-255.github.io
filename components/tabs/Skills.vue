@@ -1,12 +1,12 @@
 <template>
   <div class="mx-auto">
-    <page-header icon="address-card" title="about" />
+    <page-header icon="address-card" title="skills" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "About"
+  name: "Skills"
 }
 </script>
 
