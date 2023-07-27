@@ -15,10 +15,13 @@ export const mutations = {
   SET_DARK: (state, bool) => {
     if (process.client) {
       localStorage.setItem('dark-theme', bool);
-      state.isDarkMode = bool;
     }
+    state.isDarkMode = bool;
   },
   SET_PAGE: (state, value) => {
     state.activePage = value;
+    if (process.client) {
+      window.scrollTo(0, 0);
+    }
   }
 };

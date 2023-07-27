@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar dark:text-white">
-    <div class="menu md:rounded-lg bg-slate-300/[0.8] dark:bg-slate-600/[0.8]">
+  <nav class="navbar md:ml-2 lg:ml-4 xl:ml-6 dark:text-white">
+    <div class="menu md:rounded-lg bg-saturate shadow-lg">
       <input class="menu_input" id="btn1" name="menu" type="radio" value="1" :checked="activePage === 1"
              @input="updateActivePage"/>
       <div class="menu_contain">
@@ -86,7 +86,6 @@ export default {
 
 <style scoped>
 .navbar {
-  margin: auto 2rem;
   font-size: .9rem;
   position: fixed;
   left: 0;
@@ -158,8 +157,11 @@ export default {
   display: none;
 }
 
-.menu_input[type=radio]:checked + .menu_contain .menu_label {
+.dark .menu_input[type=radio]:checked + .menu_contain .menu_label {
   background-color: rgba(255, 255, 255, 0.3);
+}
+.menu_input[type=radio]:checked + .menu_contain .menu_label {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu_input[type=radio]:checked + .menu_contain .menu_label .fa-icon,

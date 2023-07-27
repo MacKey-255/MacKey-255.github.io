@@ -3,7 +3,7 @@
     <particles :is-dark-mode="isDarkMode"/>
     <AppMenu/>
 
-    <div class="container px-4 md:mx-auto">
+    <div class="container px-4 sm:mx-auto">
       <NuxtChild/>
     </div>
     <AppFooter/>
@@ -32,3 +32,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-saturate {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+
+.fade-enter-from, .fade-leave-to {
+	opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+	transition: opacity 0.1s ease-in-out;
+}
+</style>
