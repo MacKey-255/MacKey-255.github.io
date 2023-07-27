@@ -26,7 +26,7 @@
             </a>
 
             <a class="transition ease-in-out hover:scale-150 hover:-translate-y-1 duration-150"
-               :href="get_email"
+               :href="email"
                target="_blank"
                rel="noreferrer"
                aria-label="send email">
@@ -82,7 +82,7 @@ import {mapMutations} from "vuex";
 export default {
   name: "Home",
   computed: {
-    get_email() {
+    email() {
       let subject = 'Oferta%20de%20trabajo';
       if (this.$i18n.locale === 'en') {
         subject = 'Work%20offer';

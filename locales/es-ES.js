@@ -26,6 +26,22 @@ export default {
   skills_title_languages: 'Idiomas',
   skills_languages: [['Español', '(Nativo)'], ['Ingles', '(A2)']],
   /* Projects */
+  /* Contacts */
+  contact_title: '¿Tienes un proyecto en mente? ¡Construyamos algo grandioso juntos!',
+  contact_subtitle: 'Estoy emocionado por saber de ti y hablar cómo podemos colaborar para dar vida a tus ideas. Ya sea una aplicación web, desarrollo de API o cualquier otra solución web, convertamos tus ideas en realidad y hagamos un impacto en el mundo digital. ¡Contáctame ahora para empezar!',
+  contact_linkedin_profile: 'Perfil LinkedIn',
+  contact_github_profile: 'Perfil Github',
+  contact_phone: 'Teléfono',
+  contact_form: 'Contactame',
+
+  contact_email: 'Correo',
+  contact_email_name: 'Nombre',
+  contact_email_name_placeholder: 'Introduzca el nombre',
+  contact_email_message: 'Mensaje',
+  contact_email_message_placeholder: 'Escribe un message...',
+  contact_email_send: 'Enviar',
+  contact_email_sent: '¡Mensaje enviado exitosamente!',
+  contact_email_sent_error: '¡Error enviando el mensaje!',
   /* Utils */
   years: 'años',
   year: 'año',

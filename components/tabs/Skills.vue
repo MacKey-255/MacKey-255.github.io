@@ -1,10 +1,10 @@
 <template>
   <div class="mx-auto">
     <div class="sm:mt-8"></div>
-    <div class="grid gap-x-10 gap-y-6 md:grid-cols-3 lg:grid-cols-2">
-      <div class="md:col-span-2 lg:col-span-1">
+    <div class="grid gap-x-10 gap-y-6 md:grid-cols-3 xl:grid-cols-2">
+      <div class="md:col-span-2 xl:col-span-1">
         <!--Introduction-->
-        <div class="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8">
+        <div class="lg:col-span-2 lg:w-full lg:max-w-7xl lg:gap-x-8">
           <div class="lg:pr-4">
             <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
               {{ $t('skills_title') }}
@@ -37,14 +37,14 @@
 
       <div class="md:col-span-1">
         <!--Skills-->
-        <div class="lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8 mb-6"
+        <div class="lg:col-span-2 lg:w-full md:max-w-lg lg:gap-x-8 lg:px-8 mb-6"
              v-for="skill in skills">
           <div class="lg:pr-4">
             <h1 class="md:mt-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
               {{ $t(skill.label) }}:
             </h1>
             <div class="flex flex-wrap mt-3 gap-2">
-              <div v-for="item in skill.list" class="hover:scale-125 ease-in-out duration-150">
+              <div v-for="item in skill.list" class="hover:scale-125 ease-in-out duration-150 mb-1">
                 <!--span
                   class="pl-3 py-1.5
                    font-semibold text-sm bg-gray-300/[0.8] dark:bg-slate-600/[0.8] dark:text-white
@@ -64,7 +64,7 @@
         </div>
 
         <!--Languages-->
-        <div class="md:mt-8 mb-4 lg:col-span-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:gap-x-8 lg:px-8">
+        <div class="md:mt-8 mb-4 lg:col-span-2 lg:w-full md:max-w-lg lg:gap-x-8 lg:px-8">
           <div class="lg:pr-4">
             <h1 class="md:mt-2 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
               {{ $t('skills_title_languages') }}:

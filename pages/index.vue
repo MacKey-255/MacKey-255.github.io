@@ -1,9 +1,11 @@
 <template>
   <main class="tab-content flex md:h-screen">
-    <Skills v-if="isActive(2)"/>
-    <Portfolio v-else-if="isActive(3)"/>
-    <Contact v-else-if="isActive(4)"/>
-    <Home v-else/>
+    <transition name="fade" mode="out-in">
+      <Skills v-if="isActive(2)"/>
+      <Portfolio v-else-if="isActive(3)"/>
+      <Contact v-else-if="isActive(4)"/>
+      <Home v-else/>
+    </transition>
   </main>
 </template>
 
@@ -29,6 +31,10 @@ export default {
 </script>
 
 <style scoped>
+main {
+  will-change: transform, opacity;
+}
+
 .tab-content {
   padding-bottom: 24px; /* Footer separation */
 }
