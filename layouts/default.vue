@@ -32,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-saturate {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: saturate(180%) blur(10px);
+}
+</style>
