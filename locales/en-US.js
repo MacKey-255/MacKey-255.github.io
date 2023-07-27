@@ -40,6 +40,7 @@ export default {
   contact_email_message: 'Message',
   contact_email_message_placeholder: 'Type a message...',
   contact_email_send: 'Submit',
+  contact_email_sending: 'Sending ...',
   contact_email_sent: 'Message sent successfully!',
   contact_email_sent_error: 'Error sending message!',
   /* Utils */

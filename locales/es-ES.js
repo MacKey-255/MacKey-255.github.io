@@ -40,6 +40,7 @@ export default {
   contact_email_message: 'Mensaje',
   contact_email_message_placeholder: 'Escribe un message...',
   contact_email_send: 'Enviar',
+  contact_email_sending: 'Enviando ...',
   contact_email_sent: '¡Mensaje enviado exitosamente!',
   contact_email_sent_error: '¡Error enviando el mensaje!',
   /* Utils */
