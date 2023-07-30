@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@fancyapps/ui": "^5.0.20",
     "@nuxtjs/i18n": "^7.3.1",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",

@@ -53,7 +53,7 @@
             caret-animation='blink'
           ></vue-typer>
         </p>
-        <p class="text-sm text-justify text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl dark:text-white">
+        <p class="text-xl sm:text-justify text-gray-800 dark:text-gray-200 max-w-xl mx-auto dark:text-white">
           {{ $t('profile_description') }}
         </p>
         <div class="flex mt-2 justify-center md:justify-end">
