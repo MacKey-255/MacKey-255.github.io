@@ -26,6 +26,9 @@ export default {
   skills_title_languages: 'Languages',
   skills_languages: [['Spanish', '(Native)'], ['English', '(A2)']],
   /* Projects */
+  project_title: 'Projects',
+  project_education_title: 'Education',
+  project_work_title: 'Work experience',
   /* Contacts */
   contact_title: 'Have a Project in Mind? Let\'s Build Something Great Together!',
   contact_subtitle: 'I\'m excited to hear from you and discuss how we can collaborate to bring your ideas to life. Whether it\'s a web application, API development or any other web solution, let\'s turn your ideas into reality and make an impact in the digital world. Contact me now to get started!',
@@ -40,9 +43,13 @@ export default {
   contact_email_message: 'Message',
   contact_email_message_placeholder: 'Type a message...',
   contact_email_send: 'Submit',
+  contact_email_sending: 'Sending ...',
   contact_email_sent: 'Message sent successfully!',
   contact_email_sent_error: 'Error sending message!',
   /* Utils */
+  see: 'See preview',
   years: 'yrs',
   year: 'yr',
+  present: 'Present',
+  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 };
