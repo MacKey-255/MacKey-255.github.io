@@ -18,7 +18,7 @@ export default {
   methods: {
     async changeLocale(locale) {
       this.$i18n.setLocale(locale);
-      await this.$router.push('/?lang=' + locale);
+      await this.$router.push({ path: '', query: { lang: locale }, hash: this.$router.currentRoute.hash});
     }
   }
 }

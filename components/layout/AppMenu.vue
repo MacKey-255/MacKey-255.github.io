@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar md:ml-2 lg:ml-4 xl:ml-6 dark:text-white">
-    <div class="menu md:rounded-lg bg-saturate shadow-lg">
-      <input class="menu_input" id="btn1" name="menu" type="radio" value="1" :checked="activePage === 1"
+    <bg-saturate class="menu md:rounded-lg shadow-lg">
+      <input class="menu_input" id="btn1" name="menu" type="radio" value="home" :checked="activePage === 'home'"
              @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn1">
@@ -12,7 +12,7 @@
         </label>
       </div>
 
-      <input class="menu_input" id="btn2" name="menu" type="radio" value="2" :checked="activePage === 2"
+      <input class="menu_input" id="btn2" name="menu" type="radio" value="skills" :checked="activePage === 'skills'"
              @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn2">
@@ -23,7 +23,7 @@
         </label>
       </div>
 
-      <input class="menu_input" id="btn3" name="menu" type="radio" value="3" :checked="activePage === 3"
+      <input class="menu_input" id="btn3" name="menu" type="radio" value="projects" :checked="activePage === 'projects'"
              @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn3">
@@ -34,7 +34,7 @@
         </label>
       </div>
 
-      <input class="menu_input" id="btn4" name="menu" type="radio" value="4" :checked="activePage === 4"
+      <input class="menu_input" id="btn4" name="menu" type="radio" value="contact" :checked="activePage === 'contact'"
              @input="updateActivePage"/>
       <div class="menu_contain">
         <label class="menu_label" for="btn4">
@@ -62,22 +62,26 @@
           </span>
         </label>
       </div>
-    </div>
+    </bg-saturate>
   </nav>
 </template>
 
 <script>
 /* Ref: https://codepen.io/Anna_Batura/pen/qBbaXBd */
 import {mapGetters, mapMutations} from "vuex";
+import DarkModeSwitcher from "@/components/layout/DarkModeSwitcher";
+import LangSwitcher from "@/components/layout/LangSwitcher";
+import BgSaturate from "@/components/layout/BgSaturate";
 
 export default {
   name: "AppMenu",
+  components: {DarkModeSwitcher, LangSwitcher, BgSaturate},
   computed: {
     ...mapGetters(["activePage"])
   },
   methods: {
     updateActivePage(event) {
-      this.SET_PAGE(parseInt(event.target.value));
+      this.SET_PAGE(event.target.value);
     },
     ...mapMutations(["SET_PAGE"]),
   },

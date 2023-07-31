@@ -37,42 +37,61 @@
         <h1 class="my-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
           {{ $t('project_title') }}:
         </h1>
-        <ol class="border-l border-neutral-300 dark:border-neutral-500 text-gray-900 dark:text-gray-200">
-          <li class="bg-saturate rounded-r-lg" v-for="item in projects" v-bind:key="item.id">
-            <div class="flex-start items-center flex pt-3">
-              <div class="-ml-[8px] mr-3 h-[16px] w-[16px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
-              <p class="text-sm">{{ item.date }}</p>
-              <span v-for="item in item.language"
-                    class="inline-block ml-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-                {{item}}
-              </span>
-            </div>
-            <div class="mb-6 px-4 mt-2 pb-3">
-              <client-only placeholder="Loading...">
-                <h4 class="pb-1.5 text-xl font-semibold">
-                  <a class="text-blue-500" target="_blank" rel="noreferrer" :href="item.url" v-if="item.url">
-                    {{ item.title }}
-                    <font-awesome-icon class="text-xs font-normal pb-1" :icon="['fas', 'external-link']"/>
-                  </a>
-                  <span v-else>{{ item.title }}</span>
-                </h4>
-                <p class="pb-3" v-html="item.description"></p>
+        <ol class="border-l-2 border-blue-300 dark:border-blue-500 text-gray-900 dark:text-gray-200">
+          <li v-for="item in projects" v-bind:key="item.id">
+            <bg-saturate class="rounded-r-lg">
+              <div class="flex-start items-center flex flex-wrap pt-3">
+                <div class="-ml-[8px] h-[16px] w-[16px] rounded-full bg-blue-300 dark:bg-blue-500"></div>
+                <p class="text-sm ml-2">{{ item.date }}</p>
+                <span v-for="item in item.language"
+                      class="inline-block ml-2 mb-2 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
+                  {{item}}
+                </span>
+              </div>
+              <div class="mb-6 px-4 mt-2 pb-3">
+                <client-only placeholder="Loading...">
+                  <h4 class="pb-1.5 text-xl font-semibold">
+                    <span>{{ item.title }}</span>
+                  </h4>
+                  <p class="pb-3" v-html="item.description"></p>
 
-                <div class="group inline-flex flex-wrap items-center gap-3" v-if="item.images.length > 0">
-                  <button
-                    @click="open_gallery('project_' + item.id)"
-                    type="button"
-                    class="inline-block rounded bg-blue-500 px-4 pb-[5px] pt-[6px] text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
-                    data-te-ripple-init
-                    data-te-ripple-color="light">
-                    {{ $t('see') }}
-                  </button>
-                  <fancy-box :ref="'project_' + item.id">
-                    <span :data-fancybox="item.id" v-for="img in item.images" :data-src="img"></span>
-                  </fancy-box>
-                </div>
-              </client-only>
-            </div>
+                  <div class="group inline-flex flex-wrap items-center gap-3" v-if="item.images.length > 0 || item.url">
+                    <button
+                      v-if="item.images.length > 0"
+                      @click="open_gallery('project_' + item.id)"
+                      type="button"
+                      class="inline-block rounded bg-blue-500 px-4 pb-[5px] pt-[6px] text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
+                      data-te-ripple-init
+                      data-te-ripple-color="light">
+                      {{ $t('preview') }}
+                    </button>
+                    <a
+                      v-if="item.url"
+                      target="_blank"
+                      rel="noreferrer"
+                      :href="item.url"
+                      type="button"
+                      class="inline-block rounded bg-blue-500 px-4 pb-[5px] pt-[6px] text-xs font-medium uppercase
+                      leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out
+                      hover:bg-info-600 focus:bg-info-600 focus:outline-none focus:ring-0 active:bg-info-700
+                      hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]
+                      focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]
+                      active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]
+                      dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)]
+                      dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]
+                      dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]
+                      dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
+                    >
+                      <span class="mr-2">{{ $t('project_link') }}</span>
+                      <font-awesome-icon class="text-xs font-norma" :icon="['fas', 'external-link']"/>
+                    </a>
+                    <fancy-box :ref="'project_' + item.id">
+                      <span :data-fancybox="item.id" v-for="img in item.images" :data-src="img"></span>
+                    </fancy-box>
+                  </div>
+                </client-only>
+              </div>
+            </bg-saturate>
           </li>
         </ol>
       </div>
@@ -81,8 +100,13 @@
 </template>
 
 <script>
+import Card from "@/components/utils/Card";
+import FancyBox from "@/components/utils/FancyBox";
+import BgSaturate from "@/components/layout/BgSaturate";
+
 export default {
   name: "Portfolio",
+  components: {Card, FancyBox, BgSaturate},
   data() {
     return {
       /* Data */
@@ -435,7 +459,7 @@ export default {
           ...value,
           date: this.dateToString(new Date(value.date)),
         };
-      }).sort((a, b) => a.id < b.id);
+      }).sort((a, b) => b.id - a.id);
     },
     educations() {
       return this.education[this.$i18n.locale].map((value) => {

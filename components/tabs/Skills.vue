@@ -16,8 +16,7 @@
         </div>
 
         <!--Expertises-->
-        <div class="bg-saturate mt-4 rounded overflow-hidden shadow-lg"
-             v-for="item in expertises">
+        <bg-saturate class="mt-4 rounded overflow-hidden shadow-lg" v-for="item in expertises" v-bind:key="item.title">
           <div class="pl-3 pr-6 py-4 flex gap-x-3">
             <font-awesome-icon class="mt-1 h-5 w-5 flex-none text-blue-500" :icon="item.icon"/>
             <div>
@@ -32,7 +31,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </bg-saturate>
       </div>
 
       <div class="md:col-span-1">
@@ -57,7 +56,12 @@
                    rounded-r-md shadow-sm">
                   {{ item.xp }} {{ item.xp > 1 ? $t('years') : $t('year') }}
                 </span-->
-                <img :src="item.icon" :alt="item.label" class="tech-icon px-2 py-1">
+                <div class='has-tooltip'>
+                  <span class='tooltip px-3 py-1.5 font-semibold text-sm bg-gray-300 dark:bg-slate-600 dark:text-white rounded-md shadow-sm -mt-8'>
+                    {{item.label}}
+                  </span>
+                  <img :src="item.icon" :alt="item.label" class="tech-icon px-2 py-1">
+                </div>
               </div>
             </div>
           </div>
@@ -70,7 +74,7 @@
               {{ $t('skills_title_languages') }}:
             </h1>
             <div class="flex flex-wrap mt-3 gap-2">
-              <div v-for="item in $t('skills_languages')" class="hover:scale-125 ease-in-out duration-150">
+              <div v-for="item in $t('skills_languages')">
                 <span
                   class="pl-3 py-1.5
                    font-semibold text-sm bg-gray-300/[0.8] dark:bg-slate-600/[0.8] dark:text-white
@@ -95,8 +99,11 @@
 <script>
 // FA Icons: https://fontawesome.com/icons/categories/coding
 // Tech icons svg: https://worldvectorlogo.com/
+import BgSaturate from "@/components/layout/BgSaturate";
+
 export default {
   name: "Skills",
+  components: {BgSaturate},
   data() {
     return {
       /* Expertise */
@@ -142,7 +149,7 @@ export default {
             {label: 'Docker', xp: '1', icon: '/icons/docker-4.svg'},
             {label: 'PostgreSQL', xp: '4', icon: '/icons/postgresql.svg'},
             {label: 'Redis', xp: '1', icon: '/icons/redis.svg'},
-            {label: 'Linux (Debian)', xp: '5', icon: '/icons/debian-2.svg'},
+            {label: 'Debian', xp: '5', icon: '/icons/debian-2.svg'},
           ]
         },
       ],

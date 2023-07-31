@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mb-4 flex rounded-xl bg-saturate text-gray-900 dark:text-gray-200 bg-clip-border shadow-lg">
+  <bg-saturate class="relative mb-4 flex rounded-xl text-gray-900 dark:text-gray-200 bg-clip-border shadow-lg">
     <div v-if="imageUrl" class="relative pl-2 md:pl-4 pt-2 md:pt-4 overflow-hidden">
       <img :src="imageUrl" alt="logo icon" class="my-auto rounded-xl" :class="imageClass"/>
     </div>
@@ -11,7 +11,7 @@
       <p v-else class="mb-1" v-html="extra"></p>
       <p class="mb-3">{{ date_representation }}</p>
       <div class="block font-sans text-base font-light leading-relaxed antialiased">
-        <ul class="list-disc list-inside">
+        <ul class="list-disc sm:list-inside">
           <li v-for="item in description" v-html="item"></li>
         </ul>
       </div>
@@ -22,10 +22,12 @@
         </span>
       </div>
     </div>
-  </div>
+  </bg-saturate>
 </template>
 
 <script>
+import BgSaturate from "@/components/layout/BgSaturate";
+
 export default {
   name: "Card",
   props: {
@@ -54,6 +56,7 @@ export default {
       default: []
     },
   },
+  components: {BgSaturate},
   computed: {
     date_representation() {
       if (this.endDate && this.endDate.length) {

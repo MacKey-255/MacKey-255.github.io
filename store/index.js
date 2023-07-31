@@ -1,6 +1,6 @@
 export const state = () => ({
   isDarkMode: false,
-  activePage: 1,
+  activePage: 'home',
 });
 
 export const getters = {
@@ -22,6 +22,7 @@ export const mutations = {
     state.activePage = value;
     if (process.client) {
       window.scrollTo(0, 0);
+      window.location.hash = value;
     }
   }
 };
