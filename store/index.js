@@ -19,6 +19,7 @@ export const mutations = {
     state.isDarkMode = bool;
   },
   SET_PAGE: (state, value) => {
+    if (!value || value === '') {return;}
     state.activePage = value;
     if (process.client) {
       window.scrollTo(0, 0);

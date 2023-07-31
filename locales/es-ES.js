@@ -8,6 +8,7 @@ export default {
   dark_mode: 'Tema',
   /* Home */
   see_more: 'Ver más',
+  download_cv: 'Descargar CV',
   profile_profession: ['Desarrollador Web Full-Stack', 'Ingeniero de Software', 'Desarrollador Backend'],
   profile_description: 'Soy un ingeniero de software con experiencia en diseño, codificación, prueba y mantenimiento de sistemas de software. Competente en varios frameworks (Django/FastAPI/Flask), lenguajes (Python/C#/Java) y sistemas embebidos. Capaz de autogestionar mi tiempo de manera efectiva durante los proyectos independientes, así como colaborar formando parte de un equipo de desarrollo.',
   /* Skills */

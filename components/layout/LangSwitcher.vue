@@ -7,18 +7,35 @@
 <script>
 export default {
   name: "LangSwitcher",
+  data() {
+    return {
+      lang: this.$i18n.locale,
+    }
+  },
   computed: {
     nextLocale() {
-      return this.$i18n.locale === 'en' ? 'es' : 'en';
+      return this.lang === 'en' ? 'es' : 'en';
     },
     countryCode() {
-      return this.$i18n.locale === 'en' ? 'gb' : 'es';
+      return this.lang === 'en' ? 'gb' : 'es';
     }
   },
   methods: {
-    async changeLocale(locale) {
+    changeLocale(locale) {
       this.$i18n.setLocale(locale);
-      await this.$router.push({ path: '', query: { lang: locale }, hash: this.$router.currentRoute.hash});
+      this.lang = locale;
+      const hash = ['', '#'].includes(this.$router.currentRoute.hash) ? {} : {
+        hash: this.$router.currentRoute.hash.replace('#', '')};
+      this.$router.push({ path: '', query: { lang: locale }, ...hash});
+    },
+    mounted() {
+      this.lang = this.$i18n.locale;
+    },
+    updated() {
+      this.lang = this.$i18n.locale;
+    },
+    unmounted() {
+      this.lang = this.$i18n.locale;
     }
   }
 }

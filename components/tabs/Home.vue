@@ -59,14 +59,15 @@
           </p>
         </bg-saturate>
         <div class="flex mt-2 justify-center md:justify-end">
-            <a class="btn-more mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-              href="/cv/es/portfolio.pdf"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="download cv"
-              download>
-              Download CV
-            </a>
+          <a class="btn-more mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+             href="/cv/es/portfolio.pdf"
+             target="_blank"
+             rel="noreferrer"
+             aria-label="download cv"
+             download>
+            <span class="mr-1">{{ $t('download_cv') }}</span>
+            <font-awesome-icon icon="download"/>
+          </a>
           <button class="btn-more bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                   @click="SET_PAGE(2)">
             <span class="mr-2">{{ $t('see_more') }}</span>

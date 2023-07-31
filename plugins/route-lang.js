@@ -13,7 +13,9 @@ export default ({ app, store }) => {
 
     // Detect page
     const value = to.hash.replace('#', '');
-    store.commit('SET_PAGE', value);
+    if (value !== '') {
+      store.commit('SET_PAGE', value);
+    }
 
     // Set title
     const title = (value !== '' ? app.i18n.t(value) + ' - ' : '') + "Michel Suarez";
