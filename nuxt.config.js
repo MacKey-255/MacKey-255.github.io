@@ -76,7 +76,8 @@ export default {
     },
     detectBrowserLanguage: {
       useCookie: true,
-      redirectOn: 'root'
+      redirectOn: 'root',
+      alwaysRedirect: true
     }
   },
 

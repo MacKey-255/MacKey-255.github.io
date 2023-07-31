@@ -32,10 +32,6 @@ export default {
     if (process.client) {
       // Load dark mode from browser local storage
       this.SET_DARK(localStorage.getItem('dark-theme') === 'true');
-      // Fix problem with Chrome and saturate background
-      if(!!window.chrome) {
-        console.log('Chrome')
-      }
     }
   }
 }

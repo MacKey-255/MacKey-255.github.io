@@ -184,7 +184,8 @@ export default {
 @media only screen and (max-device-width: 640px) {
   .navbar {
     margin: 0;
-    position: relative;
+    position: sticky;
+    top: 0;
     transform: none;
   }
 

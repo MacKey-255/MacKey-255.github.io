@@ -7,7 +7,10 @@ export default ({ app, store }) => {
         to.query.lang = 'en';
       }
       app.i18n.setLocale(to.query.lang);
+    } else {
+      app.i18n.setLocale(app.i18n.locale);
     }
+
     // Detect page
     const value = to.hash.replace('#', '');
     store.commit('SET_PAGE', value);

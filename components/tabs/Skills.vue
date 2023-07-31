@@ -56,8 +56,8 @@
                    rounded-r-md shadow-sm">
                   {{ item.xp }} {{ item.xp > 1 ? $t('years') : $t('year') }}
                 </span-->
-                <div class='has-tooltip'>
-                  <span class='tooltip px-3 py-1.5 font-semibold text-sm bg-gray-300 dark:bg-slate-600 dark:text-white rounded-md shadow-sm -mt-8'>
+                <div class="has-tooltip flex justify-center">
+                  <span class="tooltip px-3 py-1.5 font-semibold text-sm bg-gray-300 dark:bg-slate-600 dark:text-white rounded-md shadow-sm -mt-8">
                     {{item.label}}
                   </span>
                   <img :src="item.icon" :alt="item.label" class="tech-icon px-2 py-1">
