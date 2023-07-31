@@ -1,7 +1,5 @@
 <template>
-  <button @click="changeLocale(nextLocale)">
-    <span :class="icon_class"></span>
-  </button>
+  <button @click="changeLocale(nextLocale)" type="button" :class="icon_class"> {{$t('lang')}}</button>
 </template>
 
 <script>
