@@ -1,9 +1,9 @@
 <template>
-  <main class="tab-content flex md:h-screen">
+  <main class="tab-content flex md:h-screen sm:pl-10 lg:pl-14 xl:pl-16">
     <transition name="fade" mode="out-in">
-      <Skills v-if="isActive(2)"/>
-      <Portfolio v-else-if="isActive(3)"/>
-      <Contact v-else-if="isActive(4)"/>
+      <Skills v-if="isActive('skills')"/>
+      <Portfolio v-else-if="isActive('projects')"/>
+      <Contact v-else-if="isActive('contact')"/>
       <Home v-else/>
     </transition>
   </main>

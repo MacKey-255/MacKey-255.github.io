@@ -50,6 +50,20 @@
           </div>
         </div>
 
+        <!-- Location -->
+        <div class="md:pr-6 py-2 flex gap-x-3">
+          <font-awesome-icon class="my-auto md:mx-2 flex-none contact-icon text-gray-800 dark:text-gray-300"
+                             :icon="['fas', 'map-marker-alt']"/>
+          <div>
+            <div class="font-bold text-gray-900 dark:text-gray-200 text-xl mb-1">
+              {{ $t('contact_location_title') }}
+            </div>
+            <span class="font-bold text-blue-500 text-xl mb-2 wrap-word">
+              {{ $t('contact_location') }}
+            </span>
+          </div>
+        </div>
+
         <!-- Phone -->
         <div class="md:pr-6 py-2 flex gap-x-3">
           <font-awesome-icon class="my-auto md:mx-2 flex-none contact-icon text-gray-800 dark:text-gray-300"
@@ -129,17 +143,6 @@
                           focus:border-blue-500"></textarea>
             </div>
 
-            <div class="flex items-center rounded-full bg-teal-200 text-teal-900 text-sm font-bold px-4 py-3"
-                 role="alert" v-if="sent">
-              <font-awesome-icon class="text-teal-500 text-lg mr-2" :icon="['fas', 'check']"/>
-              <p>{{ $t('contact_email_sent') }}</p>
-            </div>
-            <div class="flex items-center rounded-full bg-red-200 text-red-900 text-sm font-bold px-4 py-3"
-                 role="alert" v-if="error">
-              <font-awesome-icon class="text-red-500 text-md mr-2" :icon="['fas', 'x']"/>
-              <p>{{ $t('contact_email_sent_error') }}</p>
-            </div>
-
             <div class="w-full">
               <button class="p-2 w-full rounded-lg"
                       :disabled="sending"
@@ -163,6 +166,17 @@
                   {{ $t('contact_email_sending') }}
                 </span>
               </button>
+            </div>
+
+            <div class="flex items-center rounded-full bg-teal-200 text-teal-900 text-sm font-bold px-4 py-3"
+                 role="alert" v-if="sent">
+              <font-awesome-icon class="text-teal-500 text-lg mr-2" :icon="['fas', 'check']"/>
+              <p>{{ $t('contact_email_sent') }}</p>
+            </div>
+            <div class="flex items-center rounded-full bg-red-200 text-red-900 text-sm font-bold px-4 py-3"
+                 role="alert" v-if="error">
+              <font-awesome-icon class="text-red-500 text-md mr-2" :icon="['fas', 'x']"/>
+              <p>{{ $t('contact_email_sent_error') }}</p>
             </div>
           </form>
         </div>
@@ -199,7 +213,7 @@ export default {
     email() {
       let subject = 'Oferta%20de%20trabajo';
       if (this.$i18n.locale === 'en') {
-        subject = 'Work%20offer';
+        subject = 'Job%20offer';
       }
       return 'mailto:' + this.$store.getters.EMAIL + '?Subject=' + subject;
     }
