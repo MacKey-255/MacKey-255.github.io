@@ -1,6 +1,6 @@
 <template>
   <button @click="changeLocale(nextLocale)">
-    <span :class="'fi fi-' + $t('lang')"></span>
+    <span :class="icon_class"></span>
   </button>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   computed: {
     nextLocale() {
       return this.$i18n.locale === 'en' ? 'es' : 'en';
+    },
+    icon_class() {
+      const lang = `fi fi-${this.$t('lang')}`;
+      console.log('Locale:', lang, this.$i18n.locale);
+      return lang;
     }
   },
   methods: {
