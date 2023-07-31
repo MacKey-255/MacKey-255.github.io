@@ -1,4 +1,5 @@
 export default {
+  lang: 'es',
   /* Navbar & Headers */
   home: 'Principal',
   projects: 'Proyectos',

@@ -1,4 +1,5 @@
 export default {
+  lang: 'gb',
   /* Navbar & Headers */
   home: 'Home',
   projects: 'Projects',
