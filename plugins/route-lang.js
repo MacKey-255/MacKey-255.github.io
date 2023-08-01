@@ -1,4 +1,4 @@
-export default ({ app, store }) => {
+export default ({app, store}) => {
   // Every time the route changes (fired on initialization too)
   app.router.beforeEach((to, from, next) => {
     // Detect language

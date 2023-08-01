@@ -10,7 +10,7 @@
           <div
             class="flex justify-center gap-4 p-2 rounded-b-lg bg-gray-300/[0.8] text-gray-800 dark:text-gray-200 dark:bg-slate-600/[0.8] shadow-lg">
             <a class="transition ease-in-out hover:scale-150 hover:-translate-y-1 duration-150"
-               :href="$store.getters.LINKEDIN_PROFILE_URL"
+               :href="linkedin_url"
                target="_blank"
                aria-label="linkedin url"
                rel="noreferrer">
@@ -18,7 +18,7 @@
             </a>
 
             <a class="transition ease-in-out hover:scale-150 hover:-translate-y-1 duration-150"
-               :href="$store.getters.GITHUB_PROFILE_URL"
+               :href="github_url"
                target="_blank"
                rel="noreferrer"
                aria-label="github url">
@@ -38,10 +38,10 @@
 
       <div class="md:col-span-2 justify-self-center md:justify-self-start md:order-1">
         <bg-saturate class="p-4 md:p-6 rounded-xl">
-          <h1 class="text-4xl dark:text-white font-medium">Michel Suárez</h1>
+          <h1 class="text-4xl dark:text-white font-medium">{{ full_name }}</h1>
           <p class="text-md mb-2 text-justify text-blue-800 dark:text-blue-200 max-w-xl mx-auto">
             <vue-typer
-              :text='$t("profile_profession")'
+              :text='profile_professions'
               :repeat='Infinity'
               :shuffle='false'
               initial-action='typing'
@@ -55,7 +55,7 @@
             ></vue-typer>
           </p>
           <p class="text-xl sm:text-justify text-gray-800 dark:text-gray-200 max-w-xl mx-auto dark:text-white">
-            {{ $t('profile_description') }}
+            {{ description }}
           </p>
         </bg-saturate>
         <div class="flex mt-2 justify-center md:justify-end">
@@ -82,18 +82,34 @@
 <script>
 import {mapMutations} from "vuex";
 import BgSaturate from "@/components/layout/BgSaturate";
+import {contact, profile} from "@/store/resume.data";
 
 export default {
   name: "Home",
   components: {BgSaturate},
   computed: {
+    full_name() {
+      return `${profile.name} ${profile.last_name}`;
+    },
+    description() {
+      return profile.description[this.$i18n.locale];
+    },
+    profile_professions() {
+      return profile.professions[this.$i18n.locale];
+    },
     email() {
       let subject = 'Oferta%20de%20trabajo';
       if (this.$i18n.locale === 'en') {
         subject = 'Job%20offer';
       }
-      return 'mailto:' + this.$store.getters.EMAIL + '?Subject=' + subject;
-    }
+      return 'mailto:' + contact.email + '?Subject=' + subject;
+    },
+    github_url() {
+      return contact.github_profile;
+    },
+    linkedin_url() {
+      return contact.linkedin_profile + '?locale=' + (this.$i18n.locale === 'en' ? 'en_US' : 'es_ES');
+    },
   },
   methods: {
     ...mapMutations(["SET_PAGE"]),

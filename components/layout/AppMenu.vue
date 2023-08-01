@@ -164,6 +164,7 @@ export default {
 .dark .menu_input[type=radio]:checked + .menu_contain .menu_label {
   background-color: rgba(255, 255, 255, 0.3);
 }
+
 .menu_input[type=radio]:checked + .menu_contain .menu_label {
   background-color: rgba(0, 0, 0, 0.1);
 }

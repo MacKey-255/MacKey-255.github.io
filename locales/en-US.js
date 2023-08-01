@@ -1,5 +1,4 @@
 export default {
-  lang: 'gb',
   /* Navbar & Headers */
   home: 'Home',
   projects: 'Projects',
@@ -7,11 +6,11 @@ export default {
   contact: 'Contact',
   language: 'Language',
   dark_mode: 'Dark mode',
+
   /* Home */
   see_more: 'See more',
   download_cv: 'Download CV',
-  profile_profession: ['Full-Stack Web developer', 'Software Engineer', 'Backend developer'],
-  profile_description: 'I\'m a experienced Software Engineer adept in bringing forth expertise in design, installation, testing and maintenance of software systems. Proficient in various frameworks (FastAPI/Django/Flask), languages (Python/C#/Java), and embedded systems. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team.',
+
   /* Skills */
   skills_title: 'My Expertise',
   skills_subtitle: 'Delivering high-quality software solutions for complex business challenges',
@@ -26,13 +25,14 @@ export default {
   skills_title_technologies: 'Technologies',
   skills_title_tools: 'Tools',
   skills_title_languages: 'Languages',
-  skills_languages: [['Spanish', '(Native)'], ['English', '(A2)']],
+
   /* Projects */
   project_title: 'Projects',
   project_education_title: 'Education',
   project_work_title: 'Work experience',
   project_link: 'Visit',
   preview: 'Preview',
+
   /* Contacts */
   contact_title: 'Have a Project in Mind? Let\'s Build Something Great Together!',
   contact_subtitle: 'I\'m excited to hear from you and discuss how we can collaborate to bring your ideas to life. Whether it\'s a web application, API development or any other web solution, let\'s turn your ideas into reality and make an impact in the digital world. Contact me now to get started!',
@@ -41,7 +41,6 @@ export default {
   contact_phone: 'Phone',
   contact_form: 'Contact me',
   contact_location_title: 'Location',
-  contact_location: 'Canary, Spain',
 
   contact_email: 'Email',
   contact_email_name: 'Name',
@@ -52,7 +51,9 @@ export default {
   contact_email_sending: 'Sending ...',
   contact_email_sent: 'Message sent successfully!',
   contact_email_sent_error: 'Error sending message!',
+
   /* Utils */
+  lang: 'gb',
   loading: 'Loading',
   years: 'yrs',
   year: 'yr',

@@ -353,7 +353,7 @@ export default function (element, params, start = true) {
       this.img = {
         src: sh.image.src,
         ratio: sh.image.width / sh.image.height
-      }
+      };
       if (!this.img.ratio) this.img.ratio = 1;
       if (pJS.tmp.img_type === 'svg' && pJS.tmp.source_svg !== undefined) {
         pJS.fn.vendors.createSvgImg(this);
@@ -540,14 +540,12 @@ export default function (element, params, start = true) {
       if (pJS.particles.move.out_mode === 'bounce') {
         if (p.x + p.radius > pJS.canvas.w) {
           p.vx = -p.vx;
-        }
-        else if (p.x - p.radius < 0) {
+        } else if (p.x - p.radius < 0) {
           p.vx = -p.vx;
         }
         if (p.y + p.radius > pJS.canvas.h) {
           p.vy = -p.vy;
-        }
-        else if (p.y - p.radius < 0) {
+        } else if (p.y - p.radius < 0) {
           p.vy = -p.vy;
         }
       }
@@ -994,7 +992,7 @@ export default function (element, params, start = true) {
               pJS.tmp.repulse_finish = false;
               setTimeout(function () {
                 pJS.tmp.repulse_clicking = false;
-              }, pJS.interactivity.modes.repulse.duration * 1000)
+              }, pJS.interactivity.modes.repulse.duration * 1000);
               break;
           }
         }
@@ -1112,7 +1110,7 @@ export default function (element, params, start = true) {
               pJS.tmp.img_error = true;
             }
           }
-        }
+        };
         xhr.send();
       } else {
         let img = new Image();
@@ -1251,13 +1249,13 @@ function isInArray(value, array) {
 function updateObject(targetObject, obj) {
   Object.keys(obj).forEach(function (key) {
     // delete property if set to undefined or null
-    if ( undefined === obj[key] || null === obj[key] ) {
+    if (undefined === obj[key] || null === obj[key]) {
       delete targetObject[key]
     }
     // property value is object, so recurse
-    else if('object' === typeof obj[key] && !Array.isArray(obj[key])) {
+    else if ('object' === typeof obj[key] && !Array.isArray(obj[key])) {
       // target property not object, overwrite with empty object
-      if(!('object' === typeof targetObject[key] && !Array.isArray(targetObject[key]))) {
+      if (!('object' === typeof targetObject[key] && !Array.isArray(targetObject[key]))) {
         targetObject[key] = {};
       }
       // recurse

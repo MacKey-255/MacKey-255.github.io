@@ -28,7 +28,7 @@
                target="_blank"
                rel="noreferrer"
                aria-label="linkedin url">
-              {{ $store.getters.LINKEDIN_PROFILE_URL }}
+              {{ linkedin }}
             </a>
           </div>
         </div>
@@ -41,11 +41,11 @@
             <div class="font-bold text-gray-900 dark:text-gray-200 text-xl mb-1">
               {{ $t('contact_github_profile') }}
             </div>
-            <a :href="$store.getters.GITHUB_PROFILE_URL" class="font-bold text-blue-500 text-xl mb-2 wrap-word"
+            <a :href="github_profile" class="font-bold text-blue-500 text-xl mb-2 wrap-word"
                target="_blank"
                rel="noreferrer"
                aria-label="github url">
-              {{ $store.getters.GITHUB_PROFILE_URL }}
+              {{ github_profile }}
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@
               {{ $t('contact_location_title') }}
             </div>
             <span class="font-bold text-blue-500 text-xl mb-2 wrap-word">
-              {{ $t('contact_location') }}
+              {{ location }}
             </span>
           </div>
         </div>
@@ -86,11 +86,11 @@
             <div class="font-bold text-gray-900 dark:text-gray-200 text-xl mb-1">
               {{ $t('contact_email') }}
             </div>
-            <a :href="email" class="font-bold text-blue-500 text-xl mb-2 wrap-word"
+            <a :href="contact_email" class="font-bold text-blue-500 text-xl mb-2 wrap-word"
                target="_blank"
                rel="noreferrer"
                aria-label="email url">
-              {{ $store.getters.EMAIL }}
+              {{ email }}
             </a>
           </div>
         </div>
@@ -187,12 +187,12 @@
 
 <script>
 import emailjs from '@emailjs/browser';
+import {contact} from "@/store/resume.data";
 
 export default {
   name: "Contact",
   data() {
     return {
-      phone: '+34 604256897',
       form: {
         name: '',
         email: '',
@@ -204,18 +204,33 @@ export default {
     }
   },
   computed: {
+    phone() {
+      return contact.phone;
+    },
     tel_phone() {
       return 'tel:' + this.phone;
     },
+    location() {
+      return contact.location[this.$i18n.locale];
+    },
+    linkedin() {
+      return contact.linkedin_profile;
+    },
     linkedin_url() {
-      return this.$store.getters.LINKEDIN_PROFILE_URL + '?locale=' + (this.$i18n.locale === 'en' ? 'en_US' : 'es_ES');
+      return contact.linkedin_profile + '?locale=' + (this.$i18n.locale === 'en' ? 'en_US' : 'es_ES');
     },
     email() {
+      return contact.email;
+    },
+    contact_email() {
       let subject = 'Oferta%20de%20trabajo';
       if (this.$i18n.locale === 'en') {
         subject = 'Job%20offer';
       }
-      return 'mailto:' + this.$store.getters.EMAIL + '?Subject=' + subject;
+      return 'mailto:' + contact.email + '?Subject=' + subject;
+    },
+    github_profile() {
+      return contact.github_profile;
     }
   },
   methods: {

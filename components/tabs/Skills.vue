@@ -44,21 +44,10 @@
             </h1>
             <div class="flex flex-wrap mt-3 gap-2">
               <div v-for="item in skill.list" class="hover:scale-125 ease-in-out duration-150 mb-1">
-                <!--span
-                  class="pl-3 py-1.5
-                   font-semibold text-sm bg-gray-300/[0.8] dark:bg-slate-600/[0.8] dark:text-white
-                   rounded-l-md shadow-sm">
-                  {{ item.label }}
-                </span>
-                <span
-                  class="px-2 py-1.5
-                   font-semibold text-sm bg-gray-400/[0.8] dark:bg-slate-400/[0.8] dark:text-white
-                   rounded-r-md shadow-sm">
-                  {{ item.xp }} {{ item.xp > 1 ? $t('years') : $t('year') }}
-                </span-->
                 <div class="has-tooltip flex justify-center">
-                  <span class="tooltip px-3 py-1.5 font-semibold text-sm bg-gray-300 dark:bg-slate-600 dark:text-white rounded-md shadow-sm -mt-8">
-                    {{item.label}}
+                  <span
+                    class="tooltip px-3 py-1.5 font-semibold text-sm bg-gray-300 dark:bg-slate-600 dark:text-white rounded-md shadow-sm -mt-8">
+                    {{ item.label }}
                   </span>
                   <img :src="item.icon" :alt="item.label" class="tech-icon px-2 py-1">
                 </div>
@@ -74,18 +63,18 @@
               {{ $t('skills_title_languages') }}:
             </h1>
             <div class="flex flex-wrap mt-3 gap-2">
-              <div v-for="item in $t('skills_languages')">
+              <div v-for="item in languages">
                 <span
                   class="pl-3 py-1.5
                    font-semibold text-sm bg-gray-300/[0.8] dark:bg-slate-600/[0.8] dark:text-white
                    rounded-l-md shadow-sm">
-                  {{ item[0] }}
+                  {{ item.label }}
                 </span>
                 <span
                   class="px-2 py-1.5
                    font-semibold text-sm bg-gray-400/[0.8] dark:bg-slate-400/[0.8] dark:text-white
                    rounded-r-md shadow-sm">
-                  {{ item[1] }}
+                  ({{ item.level }})
                 </span>
               </div>
             </div>
@@ -100,6 +89,7 @@
 // FA Icons: https://fontawesome.com/icons/categories/coding
 // Tech icons svg: https://worldvectorlogo.com/
 import BgSaturate from "@/components/layout/BgSaturate";
+import {languages, skills} from "@/store/resume.data";
 
 export default {
   name: "Skills",
@@ -129,30 +119,14 @@ export default {
       ],
       /* Skills */
       skills: [
-        {
-          label: 'skills_title_technologies', list: [
-            {label: 'Python', xp: '5', icon: '/icons/python-5.svg'},
-            {label: 'Javascript', xp: '4', icon: '/icons/logo-javascript.svg'},
-            {label: 'C#', xp: '2', icon: '/icons/c--4.svg'},
-            {label: 'Java', xp: '2', icon: '/icons/java-14.svg'},
-            {label: 'Django', xp: '4', icon: '/icons/django.svg'},
-            {label: 'FastAPI', xp: '1', icon: '/icons/fastapi-1.svg'},
-            {label: 'Vue.js', xp: '1', icon: '/icons/vue-js-1.svg'},
-            {label: 'Bootstrap', xp: '3', icon: '/icons/bootstrap-4.svg'},
-            {label: 'HTML', xp: '5', icon: '/icons/html-1.svg'},
-            {label: 'CSS', xp: '5', icon: '/icons/css-3.svg'},
-          ]
-        },
-        {
-          label: 'skills_title_tools', list: [
-            {label: 'Git', xp: '3', icon: '/icons/git-icon.svg'},
-            {label: 'Docker', xp: '1', icon: '/icons/docker-4.svg'},
-            {label: 'PostgreSQL', xp: '4', icon: '/icons/postgresql.svg'},
-            {label: 'Redis', xp: '1', icon: '/icons/redis.svg'},
-            {label: 'Debian', xp: '5', icon: '/icons/debian-2.svg'},
-          ]
-        },
+        {label: 'skills_title_technologies', list: skills.technologies},
+        {label: 'skills_title_tools', list: skills.tools},
       ],
+    }
+  },
+  computed: {
+    languages() {
+      return languages[this.$i18n.locale];
     }
   },
 }

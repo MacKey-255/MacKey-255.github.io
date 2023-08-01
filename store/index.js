@@ -5,10 +5,7 @@ export const state = () => ({
 
 export const getters = {
   isDarkMode: (state) => state.isDarkMode,
-  activePage: (state) => state.activePage,
-  GITHUB_PROFILE_URL: () => 'https://github.com/MacKey-255',
-  LINKEDIN_PROFILE_URL: () => 'https://www.linkedin.com/in/mackey255/',
-  EMAIL: () => 'mackeyfuturo@gmail.com'
+  activePage: (state) => state.activePage
 };
 
 export const mutations = {
@@ -19,7 +16,9 @@ export const mutations = {
     state.isDarkMode = bool;
   },
   SET_PAGE: (state, value) => {
-    if (!value || value === '') {return;}
+    if (!value || value === '') {
+      return;
+    }
     state.activePage = value;
     if (process.client) {
       window.scrollTo(0, 0);

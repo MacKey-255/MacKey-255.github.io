@@ -1,5 +1,4 @@
 export default {
-  lang: 'es',
   /* Navbar & Headers */
   home: 'Principal',
   projects: 'Proyectos',
@@ -7,11 +6,11 @@ export default {
   contact: 'Contacto',
   language: 'Lenguaje',
   dark_mode: 'Tema',
+
   /* Home */
   see_more: 'Ver más',
   download_cv: 'Descargar CV',
-  profile_profession: ['Desarrollador Web Full-Stack', 'Ingeniero de Software', 'Desarrollador Backend'],
-  profile_description: 'Soy un ingeniero de software con experiencia en diseño, codificación, prueba y mantenimiento de sistemas de software. Competente en varios frameworks (Django/FastAPI/Flask), lenguajes (Python/C#/Java) y sistemas embebidos. Capaz de autogestionar mi tiempo de manera efectiva durante los proyectos independientes, así como colaborar formando parte de un equipo de desarrollo.',
+
   /* Skills */
   skills_title: 'Mi Experiencia',
   skills_subtitle: 'Entregando soluciones de software de alta calidad para desafíos empresariales complejos.',
@@ -26,13 +25,14 @@ export default {
   skills_title_technologies: 'Tecnologías',
   skills_title_tools: 'Herramientas',
   skills_title_languages: 'Idiomas',
-  skills_languages: [['Español', '(Nativo)'], ['Ingles', '(A2)']],
+
   /* Projects */
   project_title: 'Proyectos',
   project_education_title: 'Educación',
   project_work_title: 'Experiencia laboral',
   project_link: 'Visitar',
   preview: 'Vista previa',
+
   /* Contacts */
   contact_title: '¿Tienes un proyecto en mente? ¡Construyamos algo grandioso juntos!',
   contact_subtitle: 'Estoy emocionado por saber de ti y hablar cómo podemos colaborar para dar vida a tus ideas. Ya sea una aplicación web, desarrollo de API o cualquier otra solución web, convertamos tus ideas en realidad y hagamos un impacto en el mundo digital. ¡Contáctame ahora para empezar!',
@@ -41,7 +41,6 @@ export default {
   contact_phone: 'Teléfono',
   contact_form: 'Contactame',
   contact_location_title: 'Ubicación',
-  contact_location: 'Canarias, España',
 
   contact_email: 'Correo',
   contact_email_name: 'Nombre',
@@ -52,7 +51,9 @@ export default {
   contact_email_sending: 'Enviando ...',
   contact_email_sent: '¡Mensaje enviado exitosamente!',
   contact_email_sent_error: '¡Error enviando el mensaje!',
+
   /* Utils */
+  lang: 'es',
   loading: 'Cargando',
   years: 'años',
   year: 'año',

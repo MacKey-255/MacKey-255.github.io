@@ -17,8 +17,9 @@ export default {
     changeLocale(locale) {
       this.$i18n.setLocale(locale);
       const hash = ['', '#'].includes(this.$router.currentRoute.hash) ? {} : {
-        hash: this.$router.currentRoute.hash.replace('#', '')};
-      this.$router.push({ path: '', query: { lang: locale }, ...hash});
+        hash: this.$router.currentRoute.hash.replace('#', '')
+      };
+      this.$router.push({path: '', query: {lang: locale}, ...hash});
     }
   }
 }

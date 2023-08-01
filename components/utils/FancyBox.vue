@@ -1,5 +1,5 @@
 <script>
-import { Fancybox } from '@fancyapps/ui';
+import {Fancybox} from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 export default {
@@ -10,7 +10,9 @@ export default {
   methods: {
     click() {
       const node = this.$refs.container.childNodes[0];
-      if (node === undefined) {return;}
+      if (node === undefined) {
+        return;
+      }
       node.click();
     }
   },
