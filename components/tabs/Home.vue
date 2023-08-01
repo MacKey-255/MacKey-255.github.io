@@ -60,7 +60,7 @@
         </bg-saturate>
         <div class="flex mt-2 justify-center md:justify-end">
           <a class="btn-more mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-             href="/cv/es/portfolio.pdf"
+             :href="cv_download_url"
              target="_blank"
              rel="noreferrer"
              aria-label="download cv"
@@ -109,6 +109,9 @@ export default {
     },
     linkedin_url() {
       return contact.linkedin_profile + '?locale=' + (this.$i18n.locale === 'en' ? 'en_US' : 'es_ES');
+    },
+    cv_download_url() {
+      return `/cv/Michel Suarez - CV_${this.$i18n.locale}.pdf`
     },
   },
   methods: {
