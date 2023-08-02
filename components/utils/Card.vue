@@ -1,6 +1,6 @@
 <template>
-  <bg-saturate class="relative mb-4 flex rounded-xl text-gray-900 dark:text-gray-200 bg-clip-border shadow-lg">
-    <div v-if="imageUrl" class="relative pl-2 md:pl-4 pt-2 md:pt-4 overflow-hidden">
+  <bg-saturate class="mb-4 flex rounded-xl text-gray-900 dark:text-gray-200 bg-clip-border shadow-lg">
+    <div v-if="imageUrl" class="pl-2 md:pl-4 pt-2 md:pt-4 overflow-hidden">
       <img :src="imageUrl" alt="logo icon" class="my-auto rounded-xl" :class="imageClass"/>
     </div>
     <div class="p-2 md:p-4">
