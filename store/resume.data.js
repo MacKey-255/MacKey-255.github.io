@@ -6,8 +6,8 @@ export const profile = {
     en: ['Full-Stack Web developer', 'Software Engineer', 'Backend developer'],
   },
   description: {
-    es: 'Soy un ingeniero de software con experiencia en diseño, codificación, prueba y mantenimiento de sistemas de software. Competente en varios frameworks (Django/FastAPI/Flask), lenguajes (Python/C#/Java) y sistemas embebidos. Capaz de autogestionar mi tiempo de manera efectiva durante los proyectos independientes, así como colaborar formando parte de un equipo de desarrollo.',
-    en: 'I\'m a experienced Software Engineer adept in bringing forth expertise in design, installation, testing and maintenance of software systems. Proficient in various frameworks (FastAPI/Django/Flask), languages (Python/C#/Java), and embedded systems. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team.',
+    es: 'Soy un ingeniero de software con experiencia en diseño, codificación, prueba y mantenimiento de sistemas de software. Competente en varios frameworks (Django/FastAPI/Vue.js), lenguajes (Python/C#/Java) y sistemas embebidos. Capaz de autogestionar mi tiempo de manera efectiva durante los proyectos independientes, así como colaborar formando parte de un equipo de desarrollo.',
+    en: 'I\'m a experienced Software Engineer adept in bringing forth expertise in design, installation, testing and maintenance of software systems. Proficient in various frameworks (FastAPI/Django/Vue.js), languages (Python/C#/Java), and embedded systems. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team.',
   },
 };
 
@@ -345,6 +345,19 @@ export const work = {
       endDate: '2023-07-01',
     },
     {
+      title: 'Ingeniero de software',
+      description: [
+        'Desarrollador web .NET (C#) del Visor Web de Xavia PACS-RIS.',
+        'Despliegue del sistema Xavia PACS-RIS a diferentes hospitales utilizando Docker y Proxmox.',
+      ],
+      company: 'Universidad de las Ciencias Informáticas (UCI)',
+      image: '/projects/logo/uci.jpeg',
+      link: 'https://www.uci.cu/',
+      techs: ['C#', 'Docker', '.NET', 'Git', 'Linux', 'PostgreSQL'],
+      startDate: '2023-01-01',
+      endDate: '2023-03-01',
+    },
+    {
       title: 'Desarrollador web',
       description: [
         'Desarrollador Web Full Stack (PHP, Symfony, Python, Django, Javascript, Vue.js)',
@@ -377,6 +390,19 @@ export const work = {
       techs: ['Python', 'Docker', 'Scrapy', 'Git', 'Linux', 'PostgreSQL'],
       startDate: '2022-11-01',
       endDate: '2023-07-01',
+    },
+    {
+      title: 'Software engineer',
+      description: [
+        '.NET (C#) Web Developer for the Xavia PACS-RIS Web Viewer.',
+        'Deployment of the Xavia PACS-RIS system to different hospitals using Docker and Proxmox.',
+      ],
+      company: 'University of Informatics Sciences (UCI)',
+      image: '/projects/logo/uci.jpeg',
+      link: 'https://www.uci.cu/en',
+      techs: ['C#', 'Docker', '.NET', 'Git', 'Linux', 'PostgreSQL'],
+      startDate: '2023-01-01',
+      endDate: '2023-03-01',
     },
     {
       title: 'Web developer',
