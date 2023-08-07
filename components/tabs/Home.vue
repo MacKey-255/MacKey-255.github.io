@@ -69,7 +69,7 @@
             <font-awesome-icon icon="download"/>
           </a>
           <button class="btn-more bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  @click="SET_PAGE(2)">
+                  @click="SET_PAGE('skills')">
             <span class="mr-2">{{ $t('see_more') }}</span>
             <font-awesome-icon icon="arrow-right"/>
           </button>
