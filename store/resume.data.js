@@ -330,6 +330,18 @@ export const education = {
 export const work = {
   es: [
     {
+      title: 'Ingeniero superior de software',
+      description: [
+        'Desarrollando agentes para linux.',
+      ],
+      company: 'LambdaLoopers',
+      image: '/projects/logo/lambdaloopers.png',
+      link: 'https://lambdaloopers.com/',
+      techs: ['Javascript', 'Kotlin', 'Git', 'Linux'],
+      startDate: '2022-08-21',
+      endDate: undefined,
+    },
+    {
       title: 'Ingeniero de software',
       description: [
         'Desarrollé scripts automatizados (en Python) para simplificar las tareas comunes y reducir el esfuerzo manual.',
@@ -376,6 +388,18 @@ export const work = {
     },
   ],
   en: [
+    {
+      title: 'Senior Software Engineer',
+      description: [
+        'Developing agents for Linux.',
+      ],
+      company: 'LambdaLoopers',
+      image: '/projects/logo/lambdaloopers.png',
+      link: 'https://lambdaloopers.com/',
+      techs: ['Javascript', 'Kotlin', 'Git', 'Linux'],
+      startDate: '2022-08-21',
+      endDate: undefined,
+    },
     {
       title: 'Software engineer',
       description: [
