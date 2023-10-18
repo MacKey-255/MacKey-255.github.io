@@ -1,5 +1,5 @@
 export const state = () => ({
-  isDarkMode: false,
+  isDarkMode: true,
   activePage: 'home',
 });
 

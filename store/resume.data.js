@@ -26,8 +26,10 @@ export const skills = {
   technologies: [
     {label: 'Python', xp: '5', icon: '/icons/python-5.svg'},
     {label: 'Javascript', xp: '4', icon: '/icons/logo-javascript.svg'},
-    {label: 'C#', xp: '2', icon: '/icons/c--4.svg'},
+    {label: 'Node.js', xp: '1', icon: '/icons/nodejs-icon.svg'},
+    {label: 'C#', xp: '3', icon: '/icons/c--4.svg'},
     {label: 'Java', xp: '2', icon: '/icons/java-14.svg'},
+    {label: 'Kotlin', xp: '1', icon: '/icons/kotlin-1.svg'},
     {label: 'Django', xp: '4', icon: '/icons/django.svg'},
     {label: 'FastAPI', xp: '1', icon: '/icons/fastapi-1.svg'},
     {label: 'Vue.js', xp: '1', icon: '/icons/vue-js-1.svg'},
@@ -332,12 +334,12 @@ export const work = {
     {
       title: 'Ingeniero superior de software',
       description: [
-        'Desarrollando agentes para linux.',
+        'Desarrollando agentes para Linux y Android.',
       ],
       company: 'LambdaLoopers',
       image: '/projects/logo/lambdaloopers.png',
       link: 'https://lambdaloopers.com/',
-      techs: ['Javascript', 'Kotlin', 'Git', 'Linux'],
+      techs: ['Javascript', 'Node.js', 'Kotlin', 'Git', 'Linux', 'Android'],
       startDate: '2022-08-21',
       endDate: undefined,
     },
@@ -391,12 +393,12 @@ export const work = {
     {
       title: 'Senior Software Engineer',
       description: [
-        'Developing agents for Linux.',
+        'Developing agents for Linux and Android.',
       ],
       company: 'LambdaLoopers',
       image: '/projects/logo/lambdaloopers.png',
       link: 'https://lambdaloopers.com/',
-      techs: ['Javascript', 'Kotlin', 'Git', 'Linux'],
+      techs: ['Javascript', 'Node.js', 'Kotlin', 'Git', 'Linux', 'Android'],
       startDate: '2022-08-21',
       endDate: undefined,
     },
