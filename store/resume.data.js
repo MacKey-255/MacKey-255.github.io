@@ -340,7 +340,7 @@ export const work = {
       image: '/projects/logo/lambdaloopers.png',
       link: 'https://lambdaloopers.com/',
       techs: ['Javascript', 'Node.js', 'Kotlin', 'Git', 'Linux', 'Android'],
-      startDate: '2022-08-21',
+      startDate: '2023-08-18',
       endDate: undefined,
     },
     {
@@ -399,7 +399,7 @@ export const work = {
       image: '/projects/logo/lambdaloopers.png',
       link: 'https://lambdaloopers.com/',
       techs: ['Javascript', 'Node.js', 'Kotlin', 'Git', 'Linux', 'Android'],
-      startDate: '2022-08-21',
+      startDate: '2023-08-18',
       endDate: undefined,
     },
     {
